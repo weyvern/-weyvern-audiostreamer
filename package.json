@@ -4,6 +4,10 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weyvern/weyvern-audiostreamer.git"
+  },
   "keywords": [
     "react",
     "audio",

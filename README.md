@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       label='Read it to me'
       show={true}
       fetcher={() =>
-        fetch(`${import.meta.env.VITE_OPENAI_PROXY}/api/v1/audio/speech`, {
+        fetch('<example-endpoint>', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json ',
