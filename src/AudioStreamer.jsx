@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 const AudioStreamer = ({
   label,
-  loading,
+  show,
   fetcher,
   containerClassName,
   audioClassName,
@@ -59,7 +59,7 @@ const AudioStreamer = ({
     }
   };
 
-  if (loading) return null;
+  if (show) return null;
   return (
     <div className={containerClassName}>
       <audio ref={ref} controls={showControls} className={audioClassName}></audio>

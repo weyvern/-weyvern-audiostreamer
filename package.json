@@ -4,10 +4,15 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "audio",
+    "streamer",
+    "player"
+  ],
+  "author": "Jorge Paul",
   "license": "ISC",
-  "description": "",
+  "description": "A simple audio streamer for React",
   "scripts": {
     "build": "rollup -c"
   },
