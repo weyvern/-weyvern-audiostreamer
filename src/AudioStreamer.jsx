@@ -41,16 +41,22 @@ const AudioStreamer = ({
         // After the updateend event is fired, check the queue
         sourceBuffer.addEventListener('updateend', () => processQueue());
 
-        let result;
+        let isDone = false;
         // While the reader is not done
-        while (!(result = await reader.read()).done) {
-          // If the result is done, end the stream
-          if (result.done) return mediaSource.endOfStream();
-          // Push the next chunk to the queue
+        while (!isDone) {
+          // Read the next chunk
+          const result = await reader.read();
+          if (result.done) {
+            isDone = true;
+            break;
+          }
+          // Add the chunk to the queue
           queue.push(result.value);
           // Process the queue
           processQueue();
         }
+        // End the media source
+        mediaSource.endOfStream();
       });
       // Play the audio
       ref.current.play();
